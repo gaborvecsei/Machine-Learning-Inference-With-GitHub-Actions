@@ -1,0 +1,14 @@
+name: 'Gabor Test'
+description: 'we dont need this'
+inputs:
+  asdasd:  # id of input
+    required: true
+    default: 'Gabor'
+outputs:
+  python-version: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.asdasd }}
