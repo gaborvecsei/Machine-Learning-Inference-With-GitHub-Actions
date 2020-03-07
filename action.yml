@@ -1,14 +1,19 @@
 name: 'Gabor Test'
 description: 'we dont need this'
 inputs:
-  asdasd:  # id of input
+  issue_comment_body:
     required: true
-    default: 'Gabor'
+  issue_number:
+     required: true
+  issue_user:
+      required: true
 outputs:
-  python-version: # id of output
-    description: 'The time we greeted you'
+  issue_comment_reply:
+    description: 'Reply to the request'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.asdasd }}
+    - ${{ inputs.issue_comment_body }}
+    - ${{ inputs.issue_number }}
+    - ${{ inputs.issue_user }}

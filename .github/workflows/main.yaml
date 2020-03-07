@@ -8,14 +8,21 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@master
-            - name: see payload
+            - name: See full payload
               env:
                   PAYLOAD: ${{ toJSON(github.event) }}
               run: echo "FULL PAYLOAD:\n${PAYLOAD}\n"
             - name: Run the container and see issue comment
+              if: startsWith(github.event.comment.body, '/predict')
               uses: ./
               id: containerrun
               with:
-                  asdasd: ${{ github.event.comment.body }}
+                  issue_comment_body: ${{ github.event.comment.body }}
+                  issue_number: ${{ github.event.issue.number }}
+                  issue_user: ${{ github.event.comment.user.login }}
             - name: Print the output from the container
-              run: echo "Python version is ${{steps.containerrun.python_version}}"
+              run: echo "The reply message is ${{steps.containerrun.issue_comment_reply}}"
+            - name: Send reply to issue for user
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: bash issue_comment.sh ${{steps.containerrun.issue_comment_reply}} ${{ github.event.issue.number }}
