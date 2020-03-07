@@ -21,7 +21,7 @@ jobs:
                   issue_number: ${{ github.event.issue.number }}
                   issue_user: ${{ github.event.comment.user.login }}
             - name: Print the output from the container
-              run: echo "The reply message is ${{steps.containerrun.issue_comment_reply}}"
+              run: echo "The reply message is ${{steps.containerrun.outputs.issue_comment_reply}}"
             - name: Send reply to issue for user
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
