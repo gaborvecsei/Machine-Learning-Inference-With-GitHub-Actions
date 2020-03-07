@@ -12,10 +12,10 @@ jobs:
               env:
                   PAYLOAD: ${{ toJSON(github.event) }}
               run: echo "FULL PAYLOAD:\n${PAYLOAD}\n"
-            - name: Run the container
+            - name: Run the container and see issue comment
               uses: ./
-              id: container_step
+              id: containerrun
               with:
-                  asdasd: 'Gabor vagyok'
+                  asdasd: ${{ github.event.comment.body }}
             - name: Print the output from the container
-              run: echo "Python version is ${{steps.container_step.python_version}}"
+              run: echo "Python version is ${{steps.containerrun.python_version}}"
