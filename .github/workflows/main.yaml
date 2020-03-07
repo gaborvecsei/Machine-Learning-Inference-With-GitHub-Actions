@@ -1,0 +1,17 @@
+name: Demo
+on: [issue_comment]
+
+jobs:
+    my_first_job:
+        runs-on: ubuntu-latest
+        name: Just a simple demo job
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Run the container
+              uses: ./
+              id: container_step
+              with:
+                  asdasd: 'Gabor vagyok'
+            - name: Print the output from the container
+              run: echo "Python version is ${{steps.container_step.python_version}}"
