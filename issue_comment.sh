@@ -6,9 +6,9 @@
 # - GITHUB_REPOSITORY (This is automatically created in Github Actions)
 # $ issue_comment.sh <<Text Comment>> <<Issue number>>
 
-MESSAGE="$1"
+MESSAGE=$1
 echo "Message: ${MESSAGE}"
-ISSUE_NUMBER="$2"
+ISSUE_NUMBER=$2
 echo "Issue Number: ${ISSUE_NUMBER}"
 
 URI=https://api.github.com

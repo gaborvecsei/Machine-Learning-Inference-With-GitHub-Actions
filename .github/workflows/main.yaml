@@ -25,4 +25,4 @@ jobs:
             - name: Send reply to issue for user
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: bash issue_comment.sh ${{steps.containerrun.outputs.issue_comment_reply}} ${{ github.event.issue.number }}
+              run: bash issue_comment.sh "${{steps.containerrun.outputs.issue_comment_reply}}" "${{ github.event.issue.number }}"
