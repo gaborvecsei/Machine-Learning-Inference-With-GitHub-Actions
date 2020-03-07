@@ -9,9 +9,9 @@ jobs:
             - name: Checkout
               uses: actions/checkout@master
             - name: see payload
-              run: echo "FULL PAYLOAD:\n${PAYLOAD}\n"
               env:
                   PAYLOAD: ${{ toJSON(github.event) }}
+              run: echo "FULL PAYLOAD:\n${PAYLOAD}\n"
             - name: Run the container
               uses: ./
               id: container_step
