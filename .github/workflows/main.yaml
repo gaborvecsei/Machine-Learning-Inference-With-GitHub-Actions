@@ -8,7 +8,7 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@master
-            - name: See full payload # This is only for debugging
+            - name: See full payload (for debugging)
               env:
                   PAYLOAD: ${{ toJSON(github.event) }}
               run: echo "FULL PAYLOAD:\n${PAYLOAD}\n"
@@ -20,7 +20,7 @@ jobs:
                   issue_comment_body: ${{ github.event.comment.body }}
                   issue_number: ${{ github.event.issue.number }}
                   issue_user: ${{ github.event.comment.user.login }}
-            - name: Print the output from the container # This is only for debugging
+            - name: Print the output from the container(for debugging)
               run: echo "The reply message is ${{steps.make_prediction.outputs.issue_comment_reply}}"
             - name: Send reply to issue for user
               env:

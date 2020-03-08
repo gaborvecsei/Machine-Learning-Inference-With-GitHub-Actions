@@ -1,5 +1,5 @@
 name: 'Prediction GitHub Action Test'
-description: 'I do not know what to write here :D'
+description: 'This is a sample with which you can run inference on a ML model with a toy dataset'
 inputs:
   issue_comment_body:
     required: true
