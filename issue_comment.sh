@@ -12,8 +12,6 @@ ISSUE_NUMBER=$2
 echo "Issue Number: ${ISSUE_NUMBER}"
 
 URI=https://api.github.com
-API_VERSION=v3
-# API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
 CONTENT_TYPE_HEADER="Content-Type: application/json"
 AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 
