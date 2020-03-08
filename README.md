@@ -15,6 +15,13 @@ Example (and also valid) comment: `/predict <sepal_length> <sepal_width> <petal_
 
 <img src="art/job_steps.png" alt="job steps">
 
+## Try it out :sunglasses:
+
+Just go to an issue at this repository and then leave a comment with the `/predict` prefic and then 4 numbers separated
+by spaces. Just like the example above.
+
+>  /predict 5.6 2.9 3.6 1.3
+
 ## Files
 
 - `action.yml`: Describes the action which build a Docker image and performs the comment parsing and inference
