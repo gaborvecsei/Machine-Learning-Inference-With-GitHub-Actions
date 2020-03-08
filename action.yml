@@ -1,12 +1,15 @@
-name: 'Gabor Test'
-description: 'we dont need this'
+name: 'Prediction GitHub Action Test'
+description: 'I do not know what to write here :D'
 inputs:
   issue_comment_body:
     required: true
+    description: 'This is the Github issue comment message'
   issue_number:
      required: true
+     description: 'Number of the Github issue'
   issue_user:
       required: true
+      description: 'This user send the comment'
 outputs:
   issue_comment_reply:
     description: 'Reply to the request'
